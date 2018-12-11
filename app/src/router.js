@@ -3,8 +3,8 @@ import Router from 'vue-router'
 //import bootstrap from '../node_modules/bootstrap/dist/css/'
 import Home from './views/Home.vue'
 import usuarios from './views/usuarios'
-
-
+import ranking from './views/ranking.vue'
+import tateti from './components/tateti.vue'
 
 Vue.use(Router)
 
@@ -16,11 +16,22 @@ export default new Router({
       component: Home
     },
     {
+      path: '/tateti',
+      name: 'tateti',
+      component: tateti
+    },
+    {
+      path:'/ranking',
+      name:'ranking',
+      component: ranking
+    },
+    {
       path: '/usuarios',
-      template:'<router-view></router-view>',
+      name:'',
+      component: usuarios.indice,
       children: [
         { //ruta por defecto de la seccion usuarios antes de jugar.
-          path: '/',
+          path: '',
           component: usuarios.usuario1,
           name: 'usuarios'
         },

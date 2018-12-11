@@ -16,9 +16,10 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  background-image: url("http://www.hdfondos.eu/preview/get_photo/189220/1920/1080");
 }
 #nav {
-  padding: 30px;
+  padding: 0px;
 }
 
 #nav a {
