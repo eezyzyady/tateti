@@ -1,19 +1,26 @@
 <template>
   <div id="tateti">
-    <Tablero />
+    <Tablero/>
   </div>
 </template>
 
 <script>
 import Tablero from './Tablero.vue';
+import TableroAbajo from './TableroAbajo.vue';
+
 
 export default {
+  
   name: 'tateti',
+  
   components: {
-    Tablero
-  }
-}
-
+    Tablero,
+    TableroAbajo,
+  },
+     props: ['usuario1', 'usuario2']
+      
+    }
+  
 
 </script>
 

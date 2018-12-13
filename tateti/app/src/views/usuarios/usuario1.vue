@@ -17,7 +17,6 @@
 
 <script>
   import axios from 'axios'
-  import {eventBus} from '@/main.js'
 
 export default {
     name: 'usuario1',
@@ -32,32 +31,19 @@ export default {
         }
     },
 
-    // props: {
-    //     propA: {
-    //         type: Object,
-    //         default: function () {
-    //             return {message: usuario.nombre}
-    //         }
-    //     }
-    // },
-
     methods: {
         guardar () {
             var comp = this
             axios.post('http://localhost:4500/usuarios', comp.usuario)
                 .then (function(resultado) {
-                comp.$router.push({ name: 'usuarios.usuario2'})
+                comp.$router.push({ name: 'usuarios.usuario2', params:{usuario1:resultado.data}})
                 console.log('te fuiste al usuario 2')
              }).catch(function(error) {
                 console.error(error)
                 });
             
         },
-        // jugador1 () {
-        //     var jugador1 = usuario.nombre
-        //     eventBus.$emit('jugador1');
-        //     console.log('jugador uno', usuario.nombre)
-        // }
+        
         
     },
     

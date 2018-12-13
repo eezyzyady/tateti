@@ -7,13 +7,9 @@
     <input class="input" type="text" placeholder="Nombre de Usuario" v-model="usuario.nombre">
     <div>
     </div>
- <div class="section">
-          <!-- //  <router-link class="button is-success" :to="{ name: 'usuarios.usuario2' }">
-           //     ACEPTAR! --><button type="submit" class="button is-primary">Aceptar !</button>
-            
-            
-            
-        </div>
+          <div class="section">
+          <button type="submit" class="button is-primary">Aceptar !</button>
+          </div>
     </div></form>
     </div>
     
@@ -31,12 +27,15 @@ export default {
             }
         }
     },
+    props: {
+        usuario1:null
+    },
     methods: {
         guardar () {
             var comp = this
             axios.post('http://localhost:4500/usuarios', comp.usuario)
                 .then (function(resultado) {
-                    comp.$router.push({ name: 'tateti'})
+                    comp.$router.push({ name: 'tateti', params: {usuario1:comp.usuario1, usuario2: resultado.data}})
                     console.log('te fuiste al juego')
                 }).catch(function(error) {
                     console.error(error)

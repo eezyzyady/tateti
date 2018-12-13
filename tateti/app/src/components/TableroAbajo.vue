@@ -7,17 +7,26 @@
 </template>
 
 <script>
-import {eventBus} from '../main.js'
-import usuario1 from '../views/usuarios/usuario1'
-//con esto poner alla arriba donde esta x gana esta ronda {{usuario.nombre}}
+import {eventBus} from '../main.js';
+import tateti from './tateti.vue'
+import axios from 'axios'
+//con props poner alla arriba donde esta x gana esta ronda {{usuario.nombre}}
 
 export default {
   name: 'TableroAbajo',
+  components: {
+    tateti,
+  },
+  props: ['usuario1','usuario2'],
+  
   data: function(){
     return{
       juegoEmpatado: false,
       xGano: false,
-      oGano: false
+      oGano: false,
+      usuario: {
+        victorias : 0
+      }
     }
   },
   created() {
@@ -27,6 +36,8 @@ export default {
     eventBus.$on('resultadoVictoria', (information) => {
       if (information.ganaMarca === 'X') {
         this.xGano = true;
+        var comp = this;
+        axios.put('http://localhost:4500/usuarios', comp.usuario)
       } else {
         this.oGano = true;
       }

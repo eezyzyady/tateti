@@ -49,7 +49,7 @@ export default {
       this.juegoMarca = this.xTurno ? 'X' : 'O';
       this.$set(this.rondasTotales, index, this.juegoMarca);
       
-//aca tengo q poner los usuarios para avisar q gano
+
       if(this.checkVictoria()){
         this.rondaActiva = false;
         eventBus.$emit('resultadoVictoria', {
@@ -66,8 +66,7 @@ export default {
         this.turno++;
         eventBus.$emit('siguienteTurno', {
           nuevaMarca: this.xTurno ? 'X' : 'O',
-          //conecto turnoF con xTurno
-          //en el futuro colocar Usuario1 y Usuario2
+          
           turnoF: this.xTurno ? '1' : '2',
         })
       }

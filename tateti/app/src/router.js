@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-//import bootstrap from '../node_modules/bootstrap/dist/css/'
+import 'bootstrap/dist/css/bootstrap.css'
 import Home from './views/Home.vue'
 import usuarios from './views/usuarios'
 import ranking from './views/ranking.vue'
@@ -18,7 +18,8 @@ export default new Router({
     {
       path: '/tateti',
       name: 'tateti',
-      component: tateti
+      component: tateti,
+      props: true
     },
     {
       path:'/ranking',
@@ -38,7 +39,8 @@ export default new Router({
         {
           path: 'usuario2',
           component: usuarios.usuario2,
-          name: 'usuarios.usuario2'
+          name: 'usuarios.usuario2',
+          props: true
         },
        
       ]

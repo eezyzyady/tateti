@@ -15,6 +15,8 @@ import {eventBus} from '../main.js'
 
 export default {
   name: 'TableroArriba',
+  
+  
   data: function(){
     return {
       nextMarca: 'X',
@@ -22,6 +24,10 @@ export default {
       juegoActivo: true
     }
   },
+mounted() {
+
+},
+
   created() {
     eventBus.$on('siguienteTurno', (information) =>{
       this.nextMarca = information.nuevaMarca;

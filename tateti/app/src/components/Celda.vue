@@ -25,15 +25,29 @@ export default {
     cursor: pointer;
     min-height: 130px;
     font-family: 'Gochi Hand', sans-serif;
+    padding:15px;
+    -webkit-box-shadow: inset 0px 0px 80px #565656;
+    -webkit-transition: background-color 0.9s;
+
+  }
+
+  .celda:hover{ 
+    background-color: #565656;
+    clear:left;
+    
+
+
   }
   .celda:nth-child(-n + 3){
     border-top: 0px;
+    
   }
   .celda:nth-last-child(-n + 3){
     border-bottom: none;
+    
   }
   .marca{
-      /* background-image: url("https://png.pngtree.com/element_origin_min_pic/16/07/09/165780b7070a8a3.jpg"); */
+      
       background-size: 150%;
       background-repeat: no-repeat;
       font-size: 80px;
